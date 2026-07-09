@@ -1,12 +1,18 @@
-package String;
-
+import java.lang.String;
 public class ReverseString {
     public static void main(String[] args){
-        String str = "Hello";
-        String reverse = "";
-        for(int i=str.length()-1;i>=0;i--){
-            reverse += str.charAt(i);
-        }
-        System.out.println("revsers a string "+reverse);
-    }
+      String str = "Hello";
+      char[] chars = str.toCharArray();
+      int left =0;
+      int right = chars.length-1;
+      while(left<right){
+         char temp = chars[left];
+         chars[left] = chars[right];
+         chars[right] = temp;
+         left++;
+         right--;
+}
+    String result = new String(chars);
+    System.out.println(result);
+}
 }
